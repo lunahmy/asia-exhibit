@@ -1,0 +1,362 @@
+/*COLORS*/
+/*Red: #BD3144*/
+/*Orange: #e06e4f*/
+/*Yellow: #e5c74c*/
+/*Background: #ede7c7*/
+/*Black: #333*/
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    background: url("../img/background.svg") 
+    no-repeat center 10%;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    color: #333;
+    scrollbar-width: none; 
+}
+
+.rightBox p {
+  display: grid;
+  grid-template-columns: max-content 1fr; /* label + text */
+  column-gap: 0.5rem;                     /* space between label and text */
+  margin: 0.5rem 0;
+  line-height: 1.4;
+}
+
+/* .modal-text {
+  display: flex;
+  grid-template-columns: max-content 1fr; /* label + text */
+  /* column-gap: 0.5rem;                     /* space between label and text */
+  /* margin: 0.5rem 0;
+  justify-content: center;
+  align-items: center;
+  text-align: left;
+} */ 
+
+.rightBox p strong {
+  color: #BD3144;
+  font-weight: bold;
+}
+
+.modal-text strong {
+  color: #BD3144;
+  font-weight: bold;
+  line-height: 2rem;
+}
+
+
+
+h1, h2, h3, h4, h5, h6, p, a, ul, button, span{
+  font-family: "Roboto", sans-serif;
+}
+
+.icons-container {
+  flex: 1; /* takes all available vertical space */
+  display: flex;
+  align-items: center;   /* vertical centering */
+  justify-content: center; /* horizontal centering */
+  flex-direction: column; 
+}
+
+
+.icons {
+  transform: scale(1);
+  transform-origin: center center;
+  display: grid;
+  row-gap: 3vh;
+  margin-top: 10vh;
+}
+
+
+.icon {
+  width: clamp(150px, 16vw, 700px);
+  height: auto;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+  border-radius: 50%;
+  /* box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  object-fit: contain; */
+}
+
+
+.icon.tiger{
+  animation: pulse 1.5s infinite alternate ease-in-out; 
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1); /* Start at original size */
+  }
+  100% {
+    transform: scale(1.15); /* End at 1.2 times size */
+  }
+}
+
+
+
+.row{
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  justify-content: center;
+  row-gap: 5vh;
+}
+
+.row.top{
+  column-gap: 32vw; 
+}
+
+.row.btm{
+  margin-top: 6vh; 
+  column-gap: 12vw; 
+}
+
+.icon:hover,
+.icon:focus-visible  {
+  transform: scale(1.1);
+  /* box-shadow: rgba(51, 51, 51, 0.5) 0px 10px 10px; */
+}
+
+
+.modal {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  pointer-events: none;
+  background: rgba(0,0,0,0.7);
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  opacity: 0;
+  transform: scale(1);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  z-index: 3;
+
+}
+
+.modal.active {
+  transform: scale(1);
+  opacity: 1;
+  pointer-events: auto;
+
+}
+
+.modal-content {
+  background: white;
+  border-radius: 25px;
+  padding: 2rem;
+  max-width: 600px;
+  position: relative;
+  margin: 2rem;
+}
+
+.map-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.map-img img {
+  width: 100%;
+  height: auto;
+}
+
+.map-img {
+  width: clamp(150px, 25vw, 300px);
+}
+
+.modal-img{
+  width: clamp(150px, 10vw, 300px);
+  margin: 10px;
+}
+
+h3{
+  font-size: 24px;
+}
+
+/* h3.modal-title{
+  margin: 16px;
+} */
+
+.zooBtn {
+  margin-top: 2rem;
+}
+
+.status{
+  background-color: #BD3144; 
+  width: fit-content;
+  justify-self: center;
+  border-radius: 25px;
+  padding: 0.5rem; 
+  padding-left: 1.1rem; 
+  padding-right: 1.1rem; 
+}
+
+.modal-tag{
+  padding: 0px;
+  margin: 0px;
+  color: white;
+  
+}
+
+.tooltip {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.tooltiptext {
+  visibility: hidden; /* Hidden by default */
+  width: 130px;
+  background-color: #333;
+  color: #ffffff;
+  text-align: center;
+  padding: 5px 0;
+  border-radius: 6px;
+  position: absolute;
+  z-index: 1; /* Ensure tooltip is displayed above content */
+  bottom: 100%;
+  left: 50%;
+  margin-left: -65px;
+}
+
+/* Show the tooltip text on hover */
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+}
+
+.modal .close {
+  position: absolute;       /* position relative to modal */
+  top: 15px;                /* distance from top */
+  right: 20px;              /* distance from right */
+  font-size: 2rem;          /* size of "×" */
+  font-weight: bold;
+  color: #333;             /* can change depending on modal background */
+  cursor: pointer;
+  user-select: none;        /* prevents text selection */
+  transition: color 0.2s ease;
+}
+
+.modal .close:hover {
+  color: #BD3144;           /* highlight color on hover */
+}
+
+.sources{
+  transition: margin-top 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  row-gap: 1vh;
+  padding: 10px;
+  position: relative;
+  margin-top: auto;
+  margin-bottom: 1rem;
+
+}
+
+.sourcesBtn, .zooBtn, .infoBtn {
+  background-color: #BD3144;
+  color: white; 
+  padding: 0.5rem;
+  border-radius: 15px;
+  /* box-shadow: 0px 2px 15px rgba(0,0,0,0.25); */
+}
+
+.sourcesBtn:hover, .zooBtn:hover, .infoBtn:hover {
+  background-color: #333;
+}
+
+.topBox{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.leftBox, .rightBox {
+  display: flex;
+  flex-direction: column; /* stack their own content vertically */
+  justify-content: center; /* centers inner content in their own box */
+  padding: 1.5rem;
+}
+
+.leftBox{
+  text-align: center;
+  align-items: center;
+}
+.rightBox{
+  text-align: left;
+}
+
+
+.map img {
+  width: 100%; 
+}
+
+a{
+  color: #BD3144;
+}
+
+@media (max-width: 600px) {
+  .sources{
+    margin-bottom: 0; 
+    /* flex-direction: row; */
+    column-gap: 1rem;
+    margin-bottom: 1.5rem;
+
+  }
+
+  .icons{
+    margin-top: 8.5rem;
+    row-gap: 1vh;
+  }
+
+  .topBox{
+    flex-direction: column;
+  }
+
+  .row.top {
+    column-gap: 10vw;
+  }
+  
+  .row.btm {
+    column-gap: 10vw;
+  }
+
+  .modal-content {
+    margin: 1rem;
+    padding: 1rem;
+  }
+
+  .rightBox{
+    padding: 0;
+    padding-right: 1rem; 
+    padding-left: 1rem;
+  }
+
+  .leftBox{
+    padding: 0;
+    padding-right: 1rem; 
+    padding-left: 1rem;
+    transform: scale(0.8);
+    transition: transform 0.2s ease;
+
+  }
+
+  .modal-title{
+    margin: 0;
+    margin-top: 1.5rem;
+  }
+
+
+  .modal-text{
+    margin: 0;
+    margin-right: 1rem;
+    margin-left: 1rem;
+  }
+
+
+}

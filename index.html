@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" href="img/logo.png" alt="Logo of Media Hub"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="stylesheet" href="css/layout.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+        <title>Asia Exhibit Infographic</title>
+	</head>
+	<body>
+        <div class="icons-container">
+        <div class="icons">
+            <div class="row top">
+                <div class="tooltip">
+                    <img class="icon tiger" data-modal="one" src="img/icon-tiger.svg" alt="Portrait graphic of a tiger.">
+                    <span class="tooltiptext">Tiger</span>
+                </div>
+                <div class="tooltip">
+                    <img class="icon" data-modal="two" src="img/icon-gibbon.svg" alt="Portrait graphic of a tiger.">
+                    <span class="tooltiptext">White-Cheeked Gibbon</span>
+                </div>
+            </div>
+            <div class="row btm">
+                <div class="tooltip">
+                    <img class="icon" data-modal="three" src="img/icon-otter.svg" alt="Portrait graphic of a tiger.">
+                    <span class="tooltiptext">Asian Small-Clawed Otter</span>
+                </div>
+                <div class="tooltip">
+                    <img class="icon" data-modal="four" src="img/icon-cobra.svg" alt="Portrait graphic of a tiger.">
+                    <span class="tooltiptext">King Cobra</span>
+                </div>
+            </div>
+        </div>
+        </div>
+        
+        <div class="modal animal-modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h3 class="modal-title"></h3>
+
+                <div class="topBox">
+                    <div class="leftBox">
+                        <img class="modal-img" alt="">
+                        <div class="status">
+                            <p class="modal-tag"></p>
+                        </div>
+                    </div>
+                    <div class="rightBox">
+                        <div class="map-container"><img class="map-img" alt=""></div>
+                        <p class="habitat"></p>
+                        <p class="threats"></p>
+                    </div>
+                </div>
+                <p class="modal-text"></p>
+            </div>
+        </div>
+
+
+        <div class="sources">
+            <button class="infoBtn" data-modal="info">Who's Coming to the Zoo?</button>
+
+            <button class="sourcesBtn" data-modal="sources">Sources</button>
+        </div>
+
+
+        <div class="modal sources-modal">
+            <div class="modal-content">
+            <span class="close">&times;</span>
+                <h3>Sources</h3>
+                <p>
+                    <a href="https://www.nczoo.org/" target="_blank">North Carolina Zoo & Botanical Gardens</a><br>
+                    <a href="https://www.iucnredlist.org/" target="_blank">The International Union for Conservation of Nature</a><br>
+                    <a href="https://nationalzoo.si.edu/animals/" target="_blank">Smithsonian’s National Zoo & Conservation Biology Institute</a><br>
+                    <a href="https://www.nationalgeographic.com/animals" target="_blank">National Geographic</a><br>
+                </p>
+            </div>
+        </div>
+
+        <div class="modal info-modal">
+            <div class="modal-content">
+            <span class="close">&times;</span>
+                <h3>Who's Coming to the Zoo?</h3>
+                <p class="infoTxt">The
+<strong style="color: #BD3144"> North Carolina Zoo and Botanical Gardens</strong> in Asheboro, North Carolina is currently developing a <strong style="color: #BD3144"> new 12-acre Asia Continent exhibit </strong>scheduled to open in 2026. The new exhibit is planned to feature tigers, Komodo dragons, white-cheeked gibbons and many other iconic species from across Asia. <strong style="color: #BD3144">Click on the icons to explore</strong> the habitat, conservation status and unique traits of select animals. 
+                </p>
+                <a href="https://www.nczoo.org/visit/asia" target="_blank">
+                <button class="zooBtn">Plan Your Visit</button>
+            </a>
+            </div>
+        </div>
+
+
+    <script src="lightbox.js"></script>
+	</body>
+</html>
